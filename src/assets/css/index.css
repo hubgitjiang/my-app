@@ -1,0 +1,8 @@
+/* 给 body,html设置样式 */
+body {
+    background-color: #324152;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+}

@@ -1,8 +1,12 @@
 /* 给 body,html设置样式 */
 body {
+    margin: 0;
     background-color: #324152;
 }
 body, html {
     width: 100%;
     height: 100%;
+}
+h1 {
+    margin: 0px;
 }

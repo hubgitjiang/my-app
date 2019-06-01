@@ -73,6 +73,8 @@ export default {
                                 });
                                 // 跳转到首页
                                 this.$router.push('/home')
+                                // 将 登录 中的 token 保存到浏览器中的 localstorage 中
+                                localStorage.setItem('token', res.data.data.token)
                             } else {
                                 this.$message.error(meta.msg)
                             }

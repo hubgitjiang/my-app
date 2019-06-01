@@ -11,7 +11,10 @@
           <Aside />
         </el-aside>
         <!-- 内容区域 -->
-        <el-main>Main</el-main>
+        <el-main>
+          <!-- 添加一个路由： -->
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -43,35 +46,33 @@ export default {
 </script>
 
 <style scoped>
-.mycon {
-  height: 100%;
-}
+  .mycon {
+    height: 100%;
+  }
 
-.el-header {
-  background-color: #B3C0D1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
+  .el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
 
-.el-aside {
-  background-color: #D3DCE6;
-  color: #333;
-  line-height: 200px;
-}
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    line-height: 200px;
+  }
 
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-}
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+  }
 
-.el-container {
-  height: 100%;
-}
+  .el-container {
+    height: 100%;
+  }
 
-.mymenu {
-  height: 100%;
-}
+  .mymenu {
+    height: 100%;
+  }
 </style>

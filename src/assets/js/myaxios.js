@@ -13,7 +13,6 @@ myaxios.install = function (Vue) {
     axios.interceptors.request.use(config => {
         // 这里是一个回调函数，这个函数会在请求发送之前执行，这时，这个 axios 已经将所有的参数放到了 config 中
         if (config.url !== 'login') {
-            console.log(config)
             // 统一设置 token
             // axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
             // 应该将 token 添加到 config 中

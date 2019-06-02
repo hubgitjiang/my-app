@@ -2,11 +2,7 @@
     <!-- 添加一个根组件 -->
     <el-card>
         <!-- 添加一个面包屑导航 -->
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-            <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-        </el-breadcrumb>
+        <BreadNav :navone="'用户管理'" :navtow="'用户列表'" />
         <!-- 添加一个搜索框 -->
         <el-row class="myrow">
             <el-col :span="8">
@@ -22,17 +18,17 @@
         <!-- 添加一个表格 -->
         <el-table :border="true" :data="tableData" style="width: 100%">
             <!-- 
-                                                    el-table 会自动遍历数据源：  
-                                                    border: 设置边框
-                                                    el-table-column：表格的列
-                                                    prop: 当前列表显示的字段
-                                                    label：当前列的表头
-                                                    width: 当前列的宽度
-                                                    注意点：
-                                                    1)列中无法显示 bool 值
-                                                    2)如果要在列中显示自己的内容，应该添加 template
-                                                    3)slot-scope="scope"中的 scope.row 就是当前行对应的数据源
-                                                -->
+                                                        el-table 会自动遍历数据源：  
+                                                        border: 设置边框
+                                                        el-table-column：表格的列
+                                                        prop: 当前列表显示的字段
+                                                        label：当前列的表头
+                                                        width: 当前列的宽度
+                                                        注意点：
+                                                        1)列中无法显示 bool 值
+                                                        2)如果要在列中显示自己的内容，应该添加 template
+                                                        3)slot-scope="scope"中的 scope.row 就是当前行对应的数据源
+                                                    -->
             <el-table-column type="index" width="50">
             </el-table-column>
             <el-table-column prop="username" label="姓名" width="180">
@@ -60,9 +56,9 @@
         </el-table>
         <!-- 新增的对话框 -->
         <!-- 
-                                                                                                    el-dialog: 对话框
-                                                                                                    visible.sync：控制当前对话框的显示和隐藏
-                                                                                                -->
+                                                                                                        el-dialog: 对话框
+                                                                                                        visible.sync：控制当前对话框的显示和隐藏
+                                                                                                    -->
         <el-dialog title="添加用户" :visible.sync="addDialog">
             <el-form :rules="rules" ref="addForm" :model="formObj">
                 <el-form-item prop="username" label="用户名" :label-width="formLabelWidth">
@@ -126,6 +122,9 @@
 </template>
 
 <script>
+// 引入面包屑导航组件
+import BreadNav from '../layout/breadnav/breadnav.vue'
+
 export default {
     data() {
         return {
@@ -381,6 +380,9 @@ export default {
         this.getUserList()
         // 获取下拉框中的数据
         this.getOpetions()
+    },
+    components: {
+        BreadNav
     }
 }
 </script>

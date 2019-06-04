@@ -29,14 +29,14 @@ import Aside from '../layout/aside/aside.vue'
 export default {
   // 进入一个组件执行的代码
   mounted() {
-    // 判断是否存在 token
-    var token = window.localStorage.getItem('token')
-    // 判断
-    if (!token) {
-      // 说明没有登录，需要重新跳转回 login
-      // this.$router.push({ name: 'login'})
-      this.$router.push('/login')
-    }
+    // // 判断是否存在 token
+    // var token = window.localStorage.getItem('token')
+    // // 判断
+    // if (!token) {
+    //   // 说明没有登录，需要重新跳转回 login
+    //   // this.$router.push({ name: 'login'})
+    //   this.$router.push('/login')
+    // }
   },
   components: {
     TopHead,

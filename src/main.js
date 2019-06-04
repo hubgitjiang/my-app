@@ -7,10 +7,16 @@ import ElementUI from 'element-ui'
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
+// 引入 element-tree-grid
+import TreeGrid from 'element-tree-grid'
 // 引入 axios 
 import myaxios from './assets/js/myaxios.js'
 // 调用方法 use
 Vue.use(myaxios)
+
+// 定义一个全局组件 tree-grid
+Vue.component(TreeGrid.name, TreeGrid)
+
 
 // 引入全局样式
 import './assets/css/index.css'

@@ -1,0 +1,50 @@
+<el-card>
+    <!-- 面包屑导航 -->
+    <MyBread :navone="'商品管理'" :navtow="'商品列表'" />
+    <!-- 搜索区域 -->
+    <el-row class="myrow">
+        <el-col :span="8">
+            <el-input v-model="search" placeholder="请输入内容" class="input-with-select">
+                <el-button slot="append" @click="mysearch" icon="el-icon-search"></el-button>
+            </el-input>
+        </el-col>
+        <el-col :span="16">
+            <el-button class="mybtn" type="success" @click="toAdd" plain>添加用户</el-button>
+        </el-col>
+    </el-row>
+    <!-- 表格区域 -->
+    <el-table :data="tableData" style="width: 100%" height="400">
+        <el-table-column type="index">
+        </el-table-column>
+        <el-table-column prop="goods_name" label="商品名称" width="400">
+        </el-table-column>
+        <el-table-column prop="goods_price" label="商品价格（元）">
+        </el-table-column>
+        <el-table-column prop="goods_weight" label="商品重量">
+        </el-table-column>
+        <el-table-column label="创建时间" width="200">
+            <template slot-scope="scope">
+                {{ scope.row.add_time | myfilter('YYYY-MM-DD hh:mm:ss') }}
+            </template>
+        </el-table-column>
+        <el-table-column label="操作" width="150">
+            <template slot-scope="scope">
+                <!-- slot-scope: 可以用来获取当前行的数据 -->
+                <!-- 两个按钮 -->
+                <el-button type="primary" icon="el-icon-edit" plain size="mini"></el-button>
+                <el-button type="danger" icon="el-icon-delete" plain size="mini"></el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+    <!-- 分页组件
+    -->
+    <el-pagination 
+        @current-change="handleCurrentChange"
+        @size-change="handleSizeChange"
+        :current-page="currentPage" 
+        :page-sizes="pageSizes" 
+        :page-size="pageSize" 
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="total">
+    </el-pagination>
+</el-card>

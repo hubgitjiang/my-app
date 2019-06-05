@@ -11,8 +11,10 @@ import router from './router'
 import TreeGrid from 'element-tree-grid'
 // 引入 axios 
 import myaxios from './assets/js/myaxios.js'
+import mymoment from './assets/js/mymoment.js'
 // 调用方法 use
 Vue.use(myaxios)
+Vue.use(mymoment)
 
 // 定义一个全局组件 tree-grid
 Vue.component(TreeGrid.name, TreeGrid)

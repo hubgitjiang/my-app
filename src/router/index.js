@@ -8,6 +8,8 @@ import Users from '../components/users/users.vue'
 import Rights from '../components/rights/rights.vue'
 import Roles from '../components/roles/roles.vue'
 import Categories from '../components/categories/categories.vue'
+import Goods from '../components/goods/goods.vue'
+import GoodsAdd from '../components/goodsadd/goodsadd.vue'
 // 引入 message
 import { Message } from 'element-ui'
 
@@ -27,7 +29,9 @@ var router = new Router({
         { path: '/users', name: 'users', component: Users }, // 添加一个 home 的子路由 userss
         { path: '/rights', name: 'rights', component: Rights }, // 添加一个 home 的子路由 rights
         { path: '/roles', name: 'roles', component: Roles }, // 添加一个 home 的子路由 roles
-        { path: '/categories', name: 'categories', component: Categories }
+        { path: '/categories', name: 'categories', component: Categories }, // 添加一个 home 的子路由 分类
+        { path: '/goods', name: 'goods', component: Goods }, // 商品列表路由
+        { path: '/goods/add', name: 'goodsadd', component: GoodsAdd }
       ]
     } // home 的路由
   ]

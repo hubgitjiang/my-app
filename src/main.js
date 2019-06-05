@@ -12,6 +12,15 @@ import TreeGrid from 'element-tree-grid'
 // 引入 axios 
 import myaxios from './assets/js/myaxios.js'
 import mymoment from './assets/js/mymoment.js'
+
+import VueQuillEditor from 'vue-quill-editor'
+
+// require styles
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor)
 // 调用方法 use
 Vue.use(myaxios)
 Vue.use(mymoment)

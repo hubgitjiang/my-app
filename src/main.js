@@ -14,6 +14,8 @@ import myaxios from './assets/js/myaxios.js'
 import mymoment from './assets/js/mymoment.js'
 
 import VueQuillEditor from 'vue-quill-editor'
+// 引入百度地图
+import BMap from 'BMap'
 
 // require styles
 import 'quill/dist/quill.core.css'

@@ -59,8 +59,8 @@
         {{ fileList }}
       </el-tab-pane>
       <el-tab-pane label="商品内容" name="diwu">
-        <el-button>添加商品</el-button>
-        <quill-editor :content="content"></quill-editor>
+        <el-button @click="addGoods">添加商品</el-button>
+        <quill-editor v-model="content"></quill-editor>
       </el-tab-pane>
     </el-tabs>
     <!-- 点击图片预览时的对话框 -->
@@ -199,6 +199,33 @@ export default {
       this.$nextTick(function() {
         this.$refs.myimg.src = file.url
       })
+    },
+    // 提交新增的数据
+    async addGoods() {
+      // 准备要提交的数据
+      let addObj = {
+        goods_name: this.addObj.goods_name, // 商品名称
+        goods_cat: this.cateSelect.join(','),// 商品分类（一级,二级,三级）
+        goods_price: this.addObj.goods_price, // 商品价格
+        goods_number: this.addObj.goods_number, // 商品数量
+        goods_weight: this.addObj.goods_weight, // 商品重量
+        goods_introduce: this.content // 商品介绍
+      }
+      // 发送请求到服务器
+      let res = await this.$http.post('goods', addObj)
+      // 解构
+      let { meta } = res.data
+      // 判断
+      if (meta.status === 201) {
+        this.$message({
+          type: 'success',
+          message: meta.msg
+        })
+        // 成功后应该跳转回商品列表
+        this.$router.push({ name: 'goods' })
+      } else {
+        this.$message.error(meta.msg)
+      }
     }
   },
   mounted() {

@@ -1,17 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 引入 userElement 组件
-import UserElement from '../components/userElement.vue'
-import Login from '../components/login/login.vue'
-import Home from '../components/home/home.vue'
-import Users from '../components/users/users.vue'
-import Rights from '../components/rights/rights.vue'
-import Roles from '../components/roles/roles.vue'
-import Categories from '../components/categories/categories.vue'
-import Goods from '../components/goods/goods.vue'
-import GoodsAdd from '../components/goodsadd/goodsadd.vue'
-import Orders from '../components/orders/orders.vue'
-import Reports from '../components/reports/reports.vue'
+var UserElement = () => import('../components/userElement.vue')
+var Login = () => import('../components/login/login.vue')
+var Home = () => import('../components/home/home.vue')
+var Users = () => import('../components/users/users.vue')
+var Rights = () => import('../components/rights/rights.vue')
+var Roles = () => import('../components/roles/roles.vue')
+var Categories = () => import('../components/categories/categories.vue')
+var Goods = () => import('../components/goods/goods.vue')
+var GoodsAdd = () => import('../components/goodsadd/goodsadd.vue')
+var Orders = () => import('../components/orders/orders.vue')
+var Reports = () => import('../components/reports/reports.vue')
+// ctrl + 移动（左,右） 移动一个单词
+// ctrl + D 选中下方相同的选项
+// end 跳转到当前行的末尾
 // 引入 message
 import { Message } from 'element-ui'
 
